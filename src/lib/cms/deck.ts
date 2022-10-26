@@ -20,4 +20,15 @@ export class DeckService {
         })).contents.map((content: any) => DeckService.parseCMSContent(content));
     }
 
+    static async getDeck(id: string): Promise<Deck> {
+        const content =  await client.get({
+            endpoint: "decks",
+            contentId: id,
+            queries: {
+                fields: "id,Character,Description,ScreenCapture"
+            }
+        });
+        return DeckService.parseCMSContent(content);
+    }
+
 }

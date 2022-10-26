@@ -20,7 +20,7 @@ export let deck: Deck;
         <p class="card-text">{deck.character}</p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <a href={`decks/${deck.id}`} class="btn btn-sm btn-outline-secondary" sveltekit:prefetch>View</a>
                 <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
             </div>
         </div>

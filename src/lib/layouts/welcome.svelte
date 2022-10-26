@@ -8,6 +8,7 @@ import ExternalImageLink from "$lib/component/link/image.svelte";
     <div class="container">
         <h1 class="welcome-heading">LoR Decks</h1>
         <p class="lead text-muted">Library of Ruinaのデッキ集</p>
+        <!-- TODO: hrefがプリフェッチの対象になってしまうのでボタンに差し替える -->
         <p>
             <ExternalImageLink href="https://store.steampowered.com/app/1256670/Library_Of_Ruina/" alt="steam link" src="./steam.png"  />
             <ExternalImageLink href="https://twitter.com/projmoonstudio" alt="twitter link" src="./twitter.png" />
