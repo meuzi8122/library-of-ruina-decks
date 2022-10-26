@@ -1,4 +1,4 @@
-import { DeckService } from "../libs/cms/deck";
+import { DeckService } from "../lib/cms/deck";
 
 export async function load() {
     return {
