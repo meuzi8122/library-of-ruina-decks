@@ -1,6 +1,8 @@
 <script lang="ts">
 
-import ExternalImageLink from "$lib/component/link/image.svelte";
+function handleExternalLinkButtonClick(url: string) {
+    window.open(url, '_blank');
+}
 
 </script>
 
@@ -8,11 +10,16 @@ import ExternalImageLink from "$lib/component/link/image.svelte";
     <div class="container">
         <h1 class="welcome-heading">LoR Decks</h1>
         <p class="lead text-muted">Library of Ruinaのデッキ集</p>
-        <!-- TODO: hrefがプリフェッチの対象になってしまうのでボタンに差し替える -->
         <p>
-            <ExternalImageLink href="https://store.steampowered.com/app/1256670/Library_Of_Ruina/" alt="steam link" src="./steam.png"  />
-            <ExternalImageLink href="https://twitter.com/projmoonstudio" alt="twitter link" src="./twitter.png" />
-            <!-- Youtube -->
+            <button class="btn btn-default" on:click={() => handleExternalLinkButtonClick("https://store.steampowered.com/app/1256670/Library_Of_Ruina/")}>
+                <i class="bi bi-steam"></i>
+            </button>
+            <button class="btn btn-default" on:click={() => handleExternalLinkButtonClick("https://twitter.com/projmoonstudio")}>
+                <i class="bi bi-twitter"></i>
+            </button>
+            <button class="btn btn-default" on:click={() => handleExternalLinkButtonClick("https://www.youtube.com/channel/UCpqyr6h4RCXCEswHlkSjykA")}>
+                <i class="bi bi-youtube"></i>
+            </button>
         </p>
     </div>
 </section>
@@ -47,6 +54,10 @@ import ExternalImageLink from "$lib/component/link/image.svelte";
     
 .welcome .container {
     max-width: 40rem;
+}
+
+.bi {
+    font-size: 1.5rem;
 }
 
 </style>
