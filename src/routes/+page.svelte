@@ -1,9 +1,12 @@
 <script lang="ts">
 
+import { page } from "$app/stores";
 import DeckCard from "$lib/component/card/deck.svelte";
 import Welcome from "$lib/component/welcome/index.svelte";
 
 export let data: { decks: Deck[] };
+
+$: keyword = $page.url.searchParams.get("keyword");
 
 </script>
 
@@ -13,16 +16,12 @@ export let data: { decks: Deck[] };
     <div class="container">
         <div class="row">
             {#each data.decks as deck}
-                <div class="col-md-4">
-                    <DeckCard deck={deck} />
-                </div>
+                {#if deck.character.toLowerCase().match(keyword || "") || deck.stage?.toLowerCase().match(keyword || "")}
+                    <div class="col-md-4">
+                        <DeckCard deck={deck} />
+                    </div>
+                {/if}
             {/each}
         </div>
-    </div>
-</div>
-
-<div class="modal fade">
-    <div class="modal-dialog modal-xl">
-        <img src={data.decks[0].screenCaptureUrl} alt={data.decks[0].character} />
     </div>
 </div>

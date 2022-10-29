@@ -1,13 +1,25 @@
+<script lang="ts">
+
+import { goto } from "$app/navigation";
+
+let keyword: string = "";
+
+function navigateIndexPage() {
+    goto(`/?keyword=${keyword}`);
+}
+
+</script>
+
 <header>
     <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
             <a href="/" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                 <strong>LoR Decks</strong>
             </a>
-            <button class="navbar-toggler">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="コアページ・階層で検索" bind:value={keyword}>
+                <button class="btn btn-outline-success" on:click={navigateIndexPage}>Search</button>
+            </div>
         </div>
     </div>
 </header>

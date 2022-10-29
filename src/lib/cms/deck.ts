@@ -6,7 +6,7 @@ export class DeckService {
         return { 
             id: content.id, 
             character: content.Character,
-            description: content.Description,
+            stage: content.Stage,
             screenCaptureUrl: content.ScreenCapture.url 
         }
     }
@@ -15,7 +15,7 @@ export class DeckService {
         return (await client.get({
             endpoint: "decks",
             queries: {
-                fields: "id,Character,Description,ScreenCapture"
+                fields: "id,Character,Stage,ScreenCapture"
             }
         })).contents.map((content: any) => DeckService.parseCMSContent(content));
     }

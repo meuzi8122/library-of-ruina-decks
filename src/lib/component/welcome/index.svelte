@@ -1,7 +1,15 @@
 <script lang="ts">
 
-function handleExternalLinkButtonClick(url: string) {
-    window.open(url, '_blank');
+function openSteam() {
+    window.open("https://store.steampowered.com/app/1256670/Library_Of_Ruina/", "_blank");
+}
+
+function openTwitter() {
+    window.open("https://twitter.com/projmoonstudio", "_blank");
+}
+
+function openYoutube() {
+    window.open("https://www.youtube.com/channel/UCpqyr6h4RCXCEswHlkSjykA", "_blank");
 }
 
 </script>
@@ -9,15 +17,15 @@ function handleExternalLinkButtonClick(url: string) {
 <section class="welcome text-center">
     <div class="container">
         <h1 class="welcome-heading">LoR Decks</h1>
-        <p class="lead text-muted">Library of Ruinaのデッキ集</p>
+        <p class="lead text-muted">Library of Ruinaのデッキのスクリーンショット</p>
         <p>
-            <button class="btn btn-default" on:click={() => handleExternalLinkButtonClick("https://store.steampowered.com/app/1256670/Library_Of_Ruina/")}>
+            <button class="btn btn-default" on:click={openSteam}>
                 <i class="bi bi-steam"></i>
             </button>
-            <button class="btn btn-default" on:click={() => handleExternalLinkButtonClick("https://twitter.com/projmoonstudio")}>
+            <button class="btn btn-default" on:click={openTwitter}>
                 <i class="bi bi-twitter"></i>
             </button>
-            <button class="btn btn-default" on:click={() => handleExternalLinkButtonClick("https://www.youtube.com/channel/UCpqyr6h4RCXCEswHlkSjykA")}>
+            <button class="btn btn-default" on:click={openYoutube}>
                 <i class="bi bi-youtube"></i>
             </button>
         </p>
