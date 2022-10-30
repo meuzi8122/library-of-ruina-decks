@@ -16,8 +16,8 @@ $: keyword = $page.url.searchParams.get("keyword");
     <div class="container">
         <div class="row">
             {#each data.decks as deck}
-                {#if deck.character.toLowerCase().match(keyword || "") || deck.stage?.toLowerCase().match(keyword || "")}
-                    <div class="col-md-4">
+                {#if deck.character.toLowerCase().match(keyword || "")}
+                    <div class="col-md-6">
                         <DeckCard deck={deck} />
                     </div>
                 {/if}

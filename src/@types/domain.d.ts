@@ -1,8 +1,11 @@
 type Deck = {
     id: string;
     character: string;
-    stage?: string;
+    battleCards: BattleCard[];
     screenCaptureUrl: string;
-    //mainScreenCapture: string;
-    //subScreenCapture(s): string or string[];
+}
+
+type BattleCard = {
+    id: string;
+    name: string;
 }

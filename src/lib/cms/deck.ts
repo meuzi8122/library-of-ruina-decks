@@ -2,11 +2,20 @@ import { client } from "./client";
 
 export class DeckService {
 
-    static parseCMSContent(content: any): Deck {
+    // static findCharacters = async (): Promise<string[]> => {
+    //     return (await client.get({
+    //         endpoint: "decks",
+    //         queries: {
+    //             fields: "Character"
+    //         }
+    //     })).contents.map((content: any) => content.Character);
+    // }
+
+    private static parseDeck(content: any): Deck {
         return { 
             id: content.id, 
             character: content.Character,
-            stage: content.Stage,
+            battleCards: content.BattleCards.map((battleCard: any) => ({ name: battleCard.name, num: battleCard.num })),
             screenCaptureUrl: content.ScreenCapture.url 
         }
     }
@@ -15,9 +24,9 @@ export class DeckService {
         return (await client.get({
             endpoint: "decks",
             queries: {
-                fields: "id,Character,Stage,ScreenCapture"
+                fields: "id,Character,BattleCards,ScreenCapture"
             }
-        })).contents.map((content: any) => DeckService.parseCMSContent(content));
+        })).contents.map((content: any) => DeckService.parseDeck(content));
     }
 
 }
