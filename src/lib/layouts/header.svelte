@@ -17,7 +17,7 @@ function navigateIndexPage() {
                 <strong>LoR Decks</strong>
             </a>
             <div class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="コアページ・階層で検索" bind:value={keyword}>
+                <input class="form-control me-2" type="search" placeholder="コアページ名で検索" bind:value={keyword}>
                 <button class="btn btn-outline-success" on:click={navigateIndexPage}>Search</button>
             </div>
         </div>

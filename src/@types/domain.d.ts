@@ -6,6 +6,6 @@ type Deck = {
 }
 
 type BattleCard = {
-    id: string;
     name: string;
+    num: number;
 }
