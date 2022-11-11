@@ -5,4 +5,3 @@
 - sveltekit:prefetchは内部リンクに使う
 - 個別ページの作り方は```individual```ブランチを参照
 - クライアントで秘匿すべき環境変数　
-```import { API_KEY, SERVICE_DOMAIN } from "$env/static/private";```
